@@ -1,16 +1,22 @@
 package businessModel.Facility;
-import businessModel.*;
-import businessModel.Maintenance.Maintenance;
-import businessModel.Use.Use;
 
-import java.util.*;
+import businessModel.Maintenance.MaintenanceManager;
+import businessModel.Maintenance.ProblemManager;
+
 
 public interface Facility {
-        private String name;
-        private Object info;
-        private Maintenance m;
-        private Inspection i;
-        private Use use;
-
-
-}
+       
+        
+        public void setId(int id);
+        public int getFacilityInformation();
+        public void setDescription(String d);
+        public String getDescription();
+    	public MaintenanceManager getMaintManag();
+    	public ProblemManager getProbManag();
+    	
+    	}
+   
+        
+        
+        
+        

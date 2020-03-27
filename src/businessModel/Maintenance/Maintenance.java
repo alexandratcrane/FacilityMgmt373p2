@@ -8,6 +8,9 @@ public interface Maintenance{
     //InspectionRequest Method
 
     //MainteinanceScheduler extends this
-
+	    	
+	    
+	    public void scheduleMaintenance(int startTime, int endTime);
+	    public String getSchedule();
 
 }
