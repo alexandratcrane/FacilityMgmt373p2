@@ -26,14 +26,17 @@ public class UseManager{
     }
 
     public boolean isInUseDuringInterval(int startTime, int endTime){
+    	boolean b = null;
         for (Use use : Uses) {
             if (use.getStartTime() < startTime && use.getEndTime() > startTime){
-            	return true;}
+            	b = true;}
             if (use.getStartTime()>startTime && use.getStartTime() < endTime){
-            	return true;
-            }else {
-            	return false;}
+            	b = true;
+            }
+            else {
+            	b = false;}
         }
+        return b;
     }
     
     public double calcUsageRate(){
