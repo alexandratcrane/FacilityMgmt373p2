@@ -28,5 +28,17 @@
 	<bean id= "Inspection2" class = "businessModel.Maintenance.Inspection">
 		<constructor-arg type = "int" value="2"/>
 	</bean>
+
+	<bean id="UseManager"
+		  class="businessModel.Use.UseManager">
+	</bean>
+	<bean id = "Use1"
+		  class="businessModel.Use.Use">
+		<constructor-arg type="int" value="1"/>
+	</bean>
+	<bean id = "Use2"
+		  class="businessModel.Use.Use">
+		<constructor-arg type="int" value="2"/>
+	</bean>
 	
 </beans>

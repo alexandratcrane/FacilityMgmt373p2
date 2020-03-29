@@ -79,7 +79,7 @@ public class FacilityManageClient {
 		
 		Use u1 = new Use(23451);
 		u1.UseSchedule(1400, 1500, "23451");
-		UseManager umang = new UseManager();
+		UseManager umang = (UseManager) context.getBean("UseManager");
 		umang.addNewUse(u1);
 		umang.setCapacity(100);
 		
