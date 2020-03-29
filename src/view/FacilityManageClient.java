@@ -54,13 +54,13 @@ public class FacilityManageClient {
 		
 		//printing out problem requested 
 		
-		Problem p1 = new Problem("pipe in facility 1 had broken");
+		Problem p1 = (Problem) context.getBean("Problem1");
 		fac1.getProbManag().addProblem(p1);
 		System.out.println("Problem detected: " + p1.getProbDesc());
 		
 		//printing out request to fix 
 		System.out.println("_________________________________________________________________________________________________\n");
-		Requests r1 = new Requests(1);
+		Requests r1 = (Requests) context.getBean("Request1");
 		r1.scheduleMaintenance(1200, 1300);
 		fac1.getMaintManag().makeFacilityMaintRequest(r1);
 		System.out.println("Maintenance request created: ");
