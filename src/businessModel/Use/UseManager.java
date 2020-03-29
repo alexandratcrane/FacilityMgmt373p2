@@ -26,7 +26,7 @@ public class UseManager{
     }
 
     public boolean isInUseDuringInterval(int startTime, int endTime){
-    	boolean b = null;
+    	boolean b = false;
         for (Use use : Uses) {
             if (use.getStartTime() < startTime && use.getEndTime() > startTime){
             	b = true;}
