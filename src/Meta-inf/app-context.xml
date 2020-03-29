@@ -9,7 +9,7 @@
 	
 	<context:component-scan base-package="src" />
 	
-	<!-- beans for managers -->
+	<!-- facility beans -->
 	
 	<bean id="FacilityManager"
 		class="businessModel.Facility.FacilityManager" ></bean>
@@ -19,7 +19,7 @@
 	</bean>
 	<bean id="FacilityFactory" class="businessModel.Facility.FacilityFactory"></bean>
 	
-
+	<!-- maintenance beans -->
 
 	<bean id="Inspection1"
 		class="businessModel.Maintenance.Inspection">
@@ -27,6 +27,13 @@
 	</bean>
 	<bean id= "Inspection2" class = "businessModel.Maintenance.Inspection">
 		<constructor-arg type = "int" value="2"/>
+	</bean>
+	<bean id="Problem1" class = "businessModel.Maintenance.Problem">
+		<constructor-arg type = "String" value ="pipe in facility 1 had broken"/>
+	</bean>
+	
+	<bean id="Request1" class="businessModel.Maintenance.Requests">
+		<constructor-arg type="int" value="1"/>
 	</bean>
 	
 </beans>
