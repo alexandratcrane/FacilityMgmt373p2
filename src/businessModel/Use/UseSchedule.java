@@ -9,7 +9,7 @@ public class UseSchedule{
     public String use;
 
     public UseSchedule(int startTime, int endTime, String use) {
-        if(validTime(startTime) & validTime(endTime)){
+        if(validUseTime(startTime) & validUseTime(endTime)){
             this.startTime = startTime;
             this.endTime = endTime;
             this.use = use;
