@@ -17,7 +17,8 @@ public class FacilityManageClient {
     	FacilityManager fmanager = (FacilityManager) context.getBean("FacilityManager");
     	
     	
-    	Facility fac1 = FacilityFactory.addNewFacility(1);
+    	Facility fac1 = (GenericFacility) context.getBean("GenericFacility");
+    	fac1.setId(1);
     	fmanager.addNewFacility(fac1);
 		Facility fac2 = FacilityFactory.addNewFacilityDetail(2, "A storage facility");
 		fmanager.addNewFacility(fac2);
@@ -27,7 +28,7 @@ public class FacilityManageClient {
 		/* PRINTING OUT A CLIENT*/
 		System.out.println("Here are the facilities we have available:");
 		for(Facility f: fmanager.listFacilities()){
-			System.out.println(f.getFacilityInformation() + " "+ f.getDescription() + ", ");
+			System.out.println("Facility ID: " + f.getFacilityInformation() + " Description: "+ f.getDescription() + ", ");
 			
 		}
 		
