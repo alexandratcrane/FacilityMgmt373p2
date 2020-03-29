@@ -15,12 +15,14 @@ public class FacilityManageClient {
     	
     	//FacilityManager fmanager = new FacilityManager();
     	FacilityManager fmanager = (FacilityManager) context.getBean("FacilityManager");
+    	FacilityFactory ff = (FacilityFactory) context.getBean("FacilityFactory");
     	
-    	
-    	Facility fac1 = (GenericFacility) context.getBean("GenericFacility");
+    	Facility fac1 = FacilityFactory.addNewFacility(1);
     	fac1.setId(1);
     	fmanager.addNewFacility(fac1);
 		Facility fac2 = FacilityFactory.addNewFacilityDetail(2, "A storage facility");
+		//fac2.setId(2);
+		//fac2.setDescription("A storage facility");
 		fmanager.addNewFacility(fac2);
 		
 		
@@ -35,14 +37,14 @@ public class FacilityManageClient {
 		System.out.println("_________________________________________________________________________________________________\n");
 		//printing out inspections requested 
 		
-		Inspection i1 = new Inspection(1);
+		Inspection i1 = (Inspection) context.getBean("Inspection1");
 	
 		fac1.getMaintManag().addNewInspection(i1);
 		
 		System.out.println("Inspection requested");
 		System.out.println("Inspection ID: " + i1.getInspectionId());
 		
-		Inspection i2 = new Inspection(2);
+		Inspection i2 = (Inspection) context.getBean("Inspection2");
 		
 		fac1.getMaintManag().addNewInspection(i2);
 		System.out.println(" ");
