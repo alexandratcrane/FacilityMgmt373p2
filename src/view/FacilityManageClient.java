@@ -77,7 +77,7 @@ public class FacilityManageClient {
 		System.out.println(" ");
 		System.out.println("_________________________________________________________________________________________________\n");
 		
-		Use u1 = new Use(23451);
+		Use u1 = (Use) context.getBean("Use1");
 		u1.UseSchedule(1400, 1500, "23451");
 		UseManager umang = (UseManager) context.getBean("UseManager");
 		umang.addNewUse(u1);
