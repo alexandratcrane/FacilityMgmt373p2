@@ -1,13 +1,24 @@
 package view;
+import org.springframework.context.ApplicationContext;
+
+
+import org.springframework.beans.factory.BeanFactory;
+import org.springframework.context.support.ClassPathXmlApplicationContext;
+
 import businessModel.Facility.*;
 import businessModel.Maintenance.*;
 import businessModel.Use.*;
 
 public class FacilityManageClient {
     public static void main (String args[]) throws Exception{
-    	FacilityManager fmanager = new FacilityManager();
+        ApplicationContext context = new ClassPathXmlApplicationContext("/META-INF/app-context.xml");
     	
-    	Facility fac1 = FacilityFactory.addNewFacility(1);
+    	//FacilityManager fmanager = new FacilityManager();
+    	FacilityManager fmanager = (FacilityManager) context.getBean("FacilityManager");
+    	
+    	
+    	Facility fac1 = (GenericFacility) context.getBean("GenericFacility");
+    	fac1.setId(1);
     	fmanager.addNewFacility(fac1);
 		Facility fac2 = FacilityFactory.addNewFacilityDetail(2, "A storage facility");
 		fmanager.addNewFacility(fac2);
@@ -17,7 +28,7 @@ public class FacilityManageClient {
 		/* PRINTING OUT A CLIENT*/
 		System.out.println("Here are the facilities we have available:");
 		for(Facility f: fmanager.listFacilities()){
-			System.out.println(f.getFacilityInformation() + " "+ f.getDescription() + ", ");
+			System.out.println("Facility ID: " + f.getFacilityInformation() + " Description: "+ f.getDescription() + ", ");
 			
 		}
 		
