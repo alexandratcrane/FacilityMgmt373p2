@@ -13,7 +13,20 @@
 	
 	<bean id="FacilityManager"
 		class="businessModel.Facility.FacilityManager" ></bean>
-	<bean id="GenericFacility" class = "businessModel.Facility.GenericFacility"></bean>
+	<bean id="GenericFacility"
+		class="businessModel.Facility.GenericFacility">
+		
+	</bean>
+	<bean id="FacilityFactory" class="businessModel.Facility.FacilityFactory"></bean>
 	
 
+
+	<bean id="Inspection1"
+		class="businessModel.Maintenance.Inspection">
+		<constructor-arg type = "int" value="1"/>
+	</bean>
+	<bean id= "Inspection2" class = "businessModel.Maintenance.Inspection">
+		<constructor-arg type = "int" value="2"/>
+	</bean>
+	
 </beans>
